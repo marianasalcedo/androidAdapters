@@ -10,6 +10,8 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import logic.CustomAdapter;
+
 public class MainActivity extends Activity {
 
     ListView listView ;
@@ -21,15 +23,13 @@ public class MainActivity extends Activity {
         setContentView(R.layout.activity_main);
         listView = (ListView) findViewById(R.id.nameList);
 
-//        String[] values = getResources().getStringArray(R.array.data);
+        String[] values = getResources().getStringArray(R.array.data);
 
 //        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,
 //                android.R.layout.simple_list_item_2, android.R.id.text1, values);
         context = getApplicationContext();
 
-        ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.data,
-                android.R.layout.simple_list_item_1);
-
+        ArrayAdapter adapter = new CustomAdapter(this, R.layout.custom_linear, values);
 
         listView.setAdapter(adapter);
 

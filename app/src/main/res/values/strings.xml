@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ListViewSample</string>
+    <string name="idString">Id: %1$d </string>
+    <string name="valueString">Value: %1$s</string>
 </resources>
